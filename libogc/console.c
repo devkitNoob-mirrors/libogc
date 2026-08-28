@@ -1079,6 +1079,7 @@ void CON_Init(void *framebuffer,int xstart,int ystart,int xres,int yres,int stri
 	for(int i=0; i<yres*stride/4; i++) {
 		ptr[i] = colorTable[0];
 	}
+	DCStoreRange(framebuffer, yres * stride);
 
 	// xstart and ystart are offsets within the provided framebuffer
 	// reduce xres and yres accordingly to prevent OOB writes
